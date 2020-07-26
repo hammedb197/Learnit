@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+            .body{
+                background-image: url({{url_for('static', filename='img/ali.jpg')}});
+                opacity: 0.1;
+                /* background-image: url("../static/img/ali.jpg"); */
+                background-size: cover;
+    
+                background-repeat: no-repeat;
+                height: 100vh;
+
+            }
+            input[type="text"] {
+                /* position: relative; */
+                width: 520px;
+                height: 60px;
+                background: #FFFFFF;
+                box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.07);
+                border-radius: 6px;
+                transform: translate(100%, 10%);
+                border:1px
+
+                /* z-index: 1; */
+            }
+            .search{
+                left: 840px;
+                /* top: 55%; */
+                position: absolute;
+                transform: translate(100%, 40%);
+                width: 90px;
+                height: 41px;
+                /* primary color */
+            
+                background: #4B57D2;
+                border-radius: 6px;
+                /* z-index: 0; */
+                color: #FFFFFF;
+                font-size: 16px;
+                /* font-family: CeraGR-Medium; */
+                font-family: Arial, Helvetica, sans-serif;
+                letter-spacing: -0.03em;
+                /* font-feature-settings: 'tnum' on, 'lnum' on; */
+                line-height: 112%;
+            
+            }
+
+        </style>
+    </head>
+
+
+    <body>
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <nav class="navbar navbar-fixed-top" role="navigation">
+            <!-- <a class="navbar-brand" href="#">Title</a> -->
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="#" style="color:white;">Home</a>
+                </li>
+                <li>
+                    <div class="input-container">
+                        <form action="{{ url_for('search')}}" method="post">
+                            <input type="text" name="text" id="input" required>
+                            <button type="submit" class="search"><i class="fa fa-search" style="color: #FFFFFF;padding-right: 5px;"></i><span style="padding-left: 10px;">Search</span></button>
+                        </form>
+                   </div>
+                </li>
+
+            </ul>
+        </nav>
+        <div class="body" style="opacity: 0.3;">
+                        
+        </div>
+        
+    </body>
+</html>
